@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="id" data-bs-theme="dark">
+<html lang="id" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio | I Dewa Gede Bayu Pradnya Kusuma</title>
+    <script>
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+            document.documentElement.setAttribute("data-bs-theme", savedTheme);
+        }
+    </script>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,9 +26,9 @@
 <body id="beranda">
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-glass sticky-top shadow-sm py-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark-glass sticky-top shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand fw-bold text-accent" href="#beranda">Bayu<span class="text-white">Kusuma.</span></a>
+            <a class="navbar-brand fw-bold text-accent" href="#beranda">Bayu<span class="text-main">Kusuma.</span></a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,6 +39,12 @@
                     <li class="nav-item"><a class="nav-link" href="#keahlian">Keahlian</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portofolio">Portofolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Aktifkan mode gelap" aria-pressed="false">
+                            <i class="bi bi-moon-stars" id="themeIcon" aria-hidden="true"></i>
+                            <span id="themeToggleLabel">Mode gelap</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,7 +63,7 @@
                     </p>
                     <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
                         <a href="#portofolio" class="btn btn-accent rounded-pill px-4 py-2 fw-semibold shadow">Lihat Karya</a>
-                        <a href="#kontak" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">Hubungi Saya</a>
+                        <a href="#kontak" class="btn btn-contact rounded-pill px-4 py-2 fw-semibold">Hubungi Saya</a>
                     </div>
                 </div>
                 <div class="col-lg-5 text-center">
@@ -144,8 +156,8 @@
                 <!-- Proyek 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <img src="project1.png" alt="">
+                        <div class="project-img">
+                            <img src="project1.png" alt="Feynance project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">Web App / AI</span>
@@ -159,8 +171,8 @@
                 <!-- Proyek 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <img src="project2.png" alt="">
+                        <div class="project-img">
+                            <img src="project2.png" alt="Sistem IoT & Arduino project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">Hardware / IoT</span>
@@ -174,8 +186,8 @@
                 <!-- Proyek 3 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center" style="height: 200px;">
-                            <img src="project3.png" alt="">
+                        <div class="project-img">
+                            <img src="project3.png" alt="Fashion e-commerce project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">Front-End / HTML</span>
@@ -192,9 +204,8 @@
                 <!-- Proyek 4 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center"
-                            style="height: 200px;">
-                            <img src="project4.png" alt="">
+                        <div class="project-img">
+                            <img src="project4.png" alt="CityMoveNavigator project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">
@@ -220,9 +231,8 @@
                 <!-- Proyek 5 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center"
-                            style="height: 200px;">
-                            <img src="project5.png" alt="">
+                        <div class="project-img">
+                            <img src="project5.png" alt="Labirin Hantu Kuyang 2.0 project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">
@@ -248,9 +258,8 @@
                 <!-- Proyek 6 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card project-card border-0 bg-surface shadow overflow-hidden h-100">
-                        <div class="bg-secondary d-flex align-items-center justify-content-center"
-                            style="height: 200px;">
-                            <img src="project6.png" alt="">
+                        <div class="project-img">
+                            <img src="project6.png" alt="Sistem Manajemen Perpustakaan Digital project preview">
                         </div>
                         <div class="card-body p-4">
                             <span class="badge bg-accent mb-2">
@@ -309,5 +318,27 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const themeToggleLabel = document.getElementById("themeToggleLabel");
+
+        function updateThemeToggle(theme) {
+            const darkMode = theme === "dark";
+            themeIcon.className = darkMode ? "bi bi-sun" : "bi bi-moon-stars";
+            themeToggleLabel.textContent = darkMode ? "Mode terang" : "Mode gelap";
+            themeToggle.setAttribute("aria-label", darkMode ? "Aktifkan mode terang" : "Aktifkan mode gelap");
+            themeToggle.setAttribute("aria-pressed", String(darkMode));
+        }
+
+        updateThemeToggle(document.documentElement.getAttribute("data-bs-theme"));
+
+        themeToggle.addEventListener("click", () => {
+            const nextTheme = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-bs-theme", nextTheme);
+            localStorage.setItem("portfolio-theme", nextTheme);
+            updateThemeToggle(nextTheme);
+        });
+    </script>
 </body>
 </html>
