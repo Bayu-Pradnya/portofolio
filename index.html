@@ -297,6 +297,42 @@
         </div>
     </section>
 
+    <main class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="calculator card shadow-lg">
+      <div class="card-body p-4">
+        <div class="display mb-3">
+          <div id="expression" class="expression text-secondary small">&nbsp;</div>
+          <div id="result" class="result">0</div>
+        </div>
+        <div class="row g-2">
+          <div class="col-3"><button class="btn btn-secondary w-100 calc-btn" data-action="clear">AC</button></div>
+          <div class="col-3"><button class="btn btn-secondary w-100 calc-btn" data-action="delete"><i class="bi bi-backspace"></i></button></div>
+          <div class="col-3"><button class="btn btn-secondary w-100 calc-btn" data-value="%">%</button></div>
+          <div class="col-3"><button class="btn btn-warning w-100 calc-btn operator" data-value="/">÷</button></div>
+
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="7">7</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="8">8</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="9">9</button></div>
+          <div class="col-3"><button class="btn btn-warning w-100 calc-btn operator" data-value="*">×</button></div>
+
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="4">4</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="5">5</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="6">6</button></div>
+          <div class="col-3"><button class="btn btn-warning w-100 calc-btn operator" data-value="-">−</button></div>
+
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="1">1</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="2">2</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value="3">3</button></div>
+          <div class="col-3"><button class="btn btn-warning w-100 calc-btn operator" data-value="+">+</button></div>
+
+          <div class="col-6"><button class="btn btn-light w-100 calc-btn" data-value="0">0</button></div>
+          <div class="col-3"><button class="btn btn-light w-100 calc-btn" data-value=".">.</button></div>
+          <div class="col-3"><button class="btn btn-danger w-100 calc-btn" data-action="equals">=</button></div>
+        </div>
+      </div>
+    </div>
+    </main>
+
     <!-- FOOTER -->
     <footer class="bg-surface py-4 text-center border-top border-secondary border-opacity-25">
         <div class="container">
@@ -306,5 +342,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
