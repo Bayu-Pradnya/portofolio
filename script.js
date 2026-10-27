@@ -1,4 +1,3 @@
-// Kalkulator sederhana dengan evaluasi aman (tanpa eval)
 (function () {
   "use strict";
 
@@ -19,12 +18,10 @@
     return String(rounded);
   }
 
-  // Evaluasi ekspresi dengan tokenizer + shunting-yard (aman, tanpa eval)
   function evaluate(expr) {
     const tokens = expr.match(/(\d+\.?\d*|[+\-*/%()])/g);
     if (!tokens) return NaN;
 
-    // Shunting-yard ke RPN
     const output = [];
     const ops = [];
     const prec = { "+": 1, "-": 1, "*": 2, "/": 2, "%": 2 };
@@ -38,7 +35,7 @@
         while (ops.length && ops[ops.length - 1] !== "(") {
           output.push(ops.pop());
         }
-        if (!ops.length) return NaN; // kurung tidak seimbang
+        if (!ops.length) return NaN; 
         ops.pop();
       } else {
         while (
@@ -55,7 +52,6 @@
       output.push(ops.pop());
     }
 
-    // Evaluasi RPN
     const stack = [];
     for (const token of output) {
       if (typeof token === "number") {
@@ -81,7 +77,7 @@
     if (current === "0" && digit !== ".") {
       current = digit;
     } else if (digit === "." && current.includes(".")) {
-      return; // cegah titik ganda
+      return;
     } else {
       current += digit;
     }
@@ -89,7 +85,6 @@
   }
 
   function inputOperator(op) {
-    // Jika operator ditekan setelah hasil, lanjutkan dari hasil
     if (expression === "" && current !== "") {
       expression = current + op;
     } else if (expression.endsWith(op)) {
@@ -145,7 +140,6 @@
     });
   });
 
-  // Dukungan keyboard
   document.addEventListener("keydown", function (event) {
     const key = event.key;
     if (/^[0-9.]$/.test(key)) {
